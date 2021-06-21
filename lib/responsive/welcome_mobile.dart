@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/components/starButton.dart';
 import 'package:myapp/screen/home_screen.dart';
 
-class WelcomeMobile extends StatefulWidget {
-  @override
-  _WelcomeMobileState createState() => _WelcomeMobileState();
-}
-
-class _WelcomeMobileState extends State<WelcomeMobile> {
-  TextEditingController controller = TextEditingController();
-
+class WelcomeMobile extends StatelessWidget {
   double getBig(BuildContext context) =>
       MediaQuery.of(context).size.width * 7 / 8;
 
@@ -56,15 +49,8 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                             color: Colors.white),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 25.0, top: 15.0),
-                      child: Text(
-                        controller.text.toUpperCase(),
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFCC7E0A)),
-                      ),
+                    SizedBox(
+                      height: 50,
                     ),
                     TextField(
                       decoration: InputDecoration(
@@ -75,10 +61,6 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                         hintText: 'Input Your Name...',
                         filled: true,
                       ),
-                      onChanged: (val) {
-                        setState(() {});
-                      },
-                      controller: controller,
                     )
                   ]),
                 ),
@@ -139,7 +121,7 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 20),
+                  margin: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

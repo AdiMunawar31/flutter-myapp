@@ -13,7 +13,7 @@ class _StarButtonState extends State<StarButton> {
       icon: Icon(
         isStar ? Icons.star : Icons.star_border,
         color: Colors.yellow,
-        size: 40,
+        size: 25,
       ),
       onPressed: () {
         setState(() {
